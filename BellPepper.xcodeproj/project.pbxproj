@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED1AEF791DAFBC21006E8794 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED1AEF781DAFBC21006E8794 /* CloudKit.framework */; };
 		ED326EC41DAFA9490011F709 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ED326EC31DAFA9490011F709 /* main.m */; };
 		ED326EC71DAFA9490011F709 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ED326EC61DAFA9490011F709 /* AppDelegate.m */; };
 		ED326ECA1DAFA9490011F709 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED326EC91DAFA9490011F709 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED1AEF761DAFBC19006E8794 /* BellPepper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BellPepper.entitlements; sourceTree = "<group>"; };
+		ED1AEF781DAFBC21006E8794 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		ED326EBF1DAFA9490011F709 /* BellPepper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BellPepper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED326EC31DAFA9490011F709 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ED326EC51DAFA9490011F709 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +36,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED1AEF791DAFBC21006E8794 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED1AEF771DAFBC21006E8794 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED1AEF781DAFBC21006E8794 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ED326EB61DAFA9490011F709 = {
 			isa = PBXGroup;
 			children = (
 				ED326EC11DAFA9490011F709 /* BellPepper */,
 				ED326EC01DAFA9490011F709 /* Products */,
+				ED1AEF771DAFBC21006E8794 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +71,7 @@
 		ED326EC11DAFA9490011F709 /* BellPepper */ = {
 			isa = PBXGroup;
 			children = (
+				ED1AEF761DAFBC19006E8794 /* BellPepper.entitlements */,
 				ED326EC51DAFA9490011F709 /* AppDelegate.h */,
 				ED326EC61DAFA9490011F709 /* AppDelegate.m */,
 				ED326EC81DAFA9490011F709 /* ViewController.h */,
@@ -112,6 +126,14 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = EDXP6Y48QS;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -271,8 +293,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BellPepper/BellPepper.entitlements;
 				DEVELOPMENT_TEAM = EDXP6Y48QS;
 				INFOPLIST_FILE = BellPepper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abn.BellPepper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,8 +307,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BellPepper/BellPepper.entitlements;
 				DEVELOPMENT_TEAM = EDXP6Y48QS;
 				INFOPLIST_FILE = BellPepper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.abn.BellPepper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -310,6 +336,7 @@
 				ED326ED81DAFA9490011F709 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
