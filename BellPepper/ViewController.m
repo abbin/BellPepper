@@ -17,20 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CKContainer *defaultContainer = [CKContainer defaultContainer];
-    [defaultContainer fetchUserRecordIDWithCompletionHandler:^(CKRecordID * _Nullable recordID, NSError * _Nullable error) {
-        CKRecordID *userRecordID = [[CKRecordID alloc] initWithRecordName:recordID.recordName];
-        CKDatabase *publicDatabase = [defaultContainer publicCloudDatabase];
-        [publicDatabase fetchRecordWithID:userRecordID completionHandler:^(CKRecord *artworkRecord, NSError *error) {
-            if (error) {
-                // Error handling for failed fetch from public database
-            }
-            else {
-                // Display the fetched record
-            }
-        }];
-
-    }];
+    
 }
 
 
